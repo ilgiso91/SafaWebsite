@@ -301,6 +301,7 @@ img {
 }
 
 .projects,
+.charm-section,
 .about,
 .contact {
     padding: 90px 0;
@@ -308,6 +309,15 @@ img {
 
 .projects {
     background: linear-gradient(180deg, transparent, rgba(232, 116, 81, 0.04));
+}
+
+.charm-section {
+    background:
+        radial-gradient(circle at 16% 20%, rgba(124, 44, 93, 0.2), transparent 30rem),
+        radial-gradient(circle at 86% 42%, rgba(232, 116, 81, 0.16), transparent 32rem),
+        linear-gradient(180deg, rgba(15, 97, 90, 0.05), rgba(232, 116, 81, 0.04));
+    border-top: 1px solid rgba(232, 116, 81, 0.12);
+    border-bottom: 1px solid rgba(232, 116, 81, 0.12);
 }
 
 .section-title {
@@ -356,20 +366,15 @@ img {
     line-height: 1.2;
 }
 
-.separate-apps {
-    width: min(1200px, 100%);
+.charm-grid {
+    width: min(980px, 100%);
     margin: 0 auto;
-}
-
-.separate-apps h3 {
-    margin: 0 0 22px;
-    font-size: 28px;
-    line-height: 1.2;
-}
-
-.separate-apps-grid {
     display: grid;
     grid-template-columns: 1fr;
+}
+
+.charm-grid .project-card {
+    width: 100%;
 }
 
 .separate-app-card {
@@ -901,6 +906,7 @@ img {
     }
 
     .projects,
+    .charm-section,
     .about,
     .contact {
         padding: 68px 0;
