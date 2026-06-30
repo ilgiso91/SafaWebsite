@@ -21,7 +21,8 @@ const projects = [
         tagline: "AI Flirt & Message Assistant",
         description: "An AI messaging coach for dating chats: analyze conversations, generate replies, tune tone, read profile photos, and use the Charm keyboard when you ask.",
         image: "images/charm-ai-reply.png",
-        featured: true,
+        featured: false,
+        separateApp: true,
         features: ["Chat Analysis", "Smart Replies", "Tone Control", "Keyboard"],
         tech: ["SwiftUI", "AI", "OCR", "iOS Keyboard"],
         details: [
@@ -94,54 +95,6 @@ const projects = [
             "Prayer guide from wudu to salam.",
             "Yasin Sharif and Asma ul Husna sections."
         ]
-    },
-    {
-        id: "charm-replies",
-        title: "Smart Replies",
-        tagline: "Write with the right tone",
-        description: "Choose a tone, adjust the intensity, and get polished message options without losing your own voice.",
-        image: "images/charm-ai-tones.png",
-        featured: false,
-        features: ["Flirty", "Funny", "Bold", "Genuine"],
-        tech: ["Tone Modes", "Copy Ready"],
-        details: [
-            "Generate several reply options from the same conversation.",
-            "Switch between tones for different dating app situations.",
-            "Tune intensity before sending anything.",
-            "Copy the winning reply in one tap."
-        ]
-    },
-    {
-        id: "charm-opener",
-        title: "Openers & Profile Coach",
-        tagline: "Start better conversations",
-        description: "Use profile context, bio text, or a clear dating photo to create natural openers and improve profile presentation.",
-        image: "images/charm-ai-opener.png",
-        featured: false,
-        features: ["Openers", "Photo Read", "Bio Coach", "Tips"],
-        tech: ["Vision", "Profile Coach"],
-        details: [
-            "Create opening messages that feel personal and natural.",
-            "Analyze profile photos for presentation, vibe, and style.",
-            "Improve your own bio with stronger versions.",
-            "Keep feedback practical, respectful, and direct."
-        ]
-    },
-    {
-        id: "charm-keyboard",
-        title: "Charm Keyboard",
-        tagline: "Message help where you type",
-        description: "A keyboard extension that brings Charm AI into texting moments while staying on-demand and user controlled.",
-        image: "images/charm-ai-keyboard.png",
-        featured: false,
-        features: ["Keyboard", "On-demand", "Credits", "Fast Reply"],
-        tech: ["Extension", "App Group"],
-        details: [
-            "Open Charm directly from the keyboard when you want help.",
-            "Generate replies without switching context.",
-            "The keyboard works only when the user asks it to.",
-            "Credit and premium state are shared with the main app."
-        ]
     }
 ];
 
@@ -195,7 +148,8 @@ function createProjectCard(project) {
 
 function renderProjects() {
     const featuredProjects = projects.filter((project) => project.featured);
-    const otherProjects = projects.filter((project) => !project.featured);
+    const otherProjects = projects.filter((project) => !project.featured && !project.separateApp);
+    const separateApps = projects.filter((project) => project.separateApp);
 
     const featuredSection = document.createElement("div");
     featuredSection.className = "featured-project";
@@ -203,7 +157,7 @@ function renderProjects() {
 
     const otherSection = document.createElement("div");
     otherSection.className = "other-projects";
-    otherSection.innerHTML = "<h3>Product Highlights</h3>";
+    otherSection.innerHTML = "<h3>Main Features</h3>";
 
     const scroller = document.createElement("div");
     scroller.className = "projects-scroll";
@@ -213,6 +167,23 @@ function renderProjects() {
     grid.appendChild(featuredSection);
     grid.appendChild(otherSection);
     initAutoScroll(scroller);
+
+    if (separateApps.length > 0) {
+        const appsSection = document.createElement("div");
+        appsSection.className = "separate-apps";
+        appsSection.innerHTML = "<h3>Separate App</h3>";
+
+        const appsGrid = document.createElement("div");
+        appsGrid.className = "separate-apps-grid";
+        separateApps.forEach((project) => {
+            const card = createProjectCard(project);
+            card.classList.add("separate-app-card");
+            appsGrid.appendChild(card);
+        });
+
+        appsSection.appendChild(appsGrid);
+        grid.appendChild(appsSection);
+    }
 }
 
 function initAutoScroll(scroller) {

@@ -271,17 +271,6 @@ img {
     font-weight: 700;
 }
 
-.hero-showcase {
-    position: relative;
-    width: 100%;
-    max-width: 460px;
-    min-height: 620px;
-    justify-self: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 .hero-phone {
     position: relative;
     max-width: 380px;
@@ -291,24 +280,6 @@ img {
     background: linear-gradient(145deg, rgba(232, 116, 81, 0.32), rgba(15, 97, 90, 0.22));
     border: 1px solid rgba(232, 116, 81, 0.2);
     box-shadow: var(--shadow-warm);
-}
-
-.hero-showcase .hero-phone {
-    justify-self: auto;
-}
-
-.hero-phone-main {
-    width: min(82%, 380px);
-    transform: rotate(-3deg);
-}
-
-.hero-phone-alt {
-    position: absolute;
-    right: -4px;
-    bottom: 34px;
-    z-index: 3;
-    width: min(48%, 220px);
-    transform: rotate(7deg);
 }
 
 .hero-phone::before {
@@ -383,6 +354,33 @@ img {
     margin: 0 auto 22px;
     font-size: 28px;
     line-height: 1.2;
+}
+
+.separate-apps {
+    width: min(1200px, 100%);
+    margin: 0 auto;
+}
+
+.separate-apps h3 {
+    margin: 0 0 22px;
+    font-size: 28px;
+    line-height: 1.2;
+}
+
+.separate-apps-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.separate-app-card {
+    width: 100%;
+    min-height: 0;
+    display: grid;
+    grid-template-columns: minmax(240px, 0.72fr) minmax(0, 1fr);
+}
+
+.separate-app-card .project-image {
+    min-height: 390px;
 }
 
 .projects-scroll {
@@ -817,6 +815,7 @@ img {
 @media (max-width: 900px) {
     .hero-grid,
     .project-card.featured,
+    .separate-app-card,
     .story-grid,
     .contact-methods {
         grid-template-columns: 1fr;
@@ -828,16 +827,6 @@ img {
 
     .hero-phone {
         max-width: 320px;
-    }
-
-    .hero-showcase {
-        max-width: 380px;
-        min-height: 560px;
-    }
-
-    .hero-phone-alt {
-        right: -2px;
-        bottom: 26px;
     }
 
     .achievements-grid {
@@ -897,20 +886,6 @@ img {
         padding: 112px 0 70px;
     }
 
-    .hero-showcase {
-        min-height: 480px;
-    }
-
-    .hero-phone-main {
-        width: 76%;
-    }
-
-    .hero-phone-alt {
-        width: 46%;
-        right: 2px;
-        bottom: 22px;
-    }
-
     .hero-title {
         font-size: clamp(40px, 13vw, 58px);
     }
@@ -944,7 +919,12 @@ img {
         min-height: 360px;
     }
 
+    .separate-app-card .project-image {
+        min-height: 340px;
+    }
+
     .project-card.featured .project-content,
+    .separate-app-card .project-content,
     .modal-content {
         padding: 24px;
     }
