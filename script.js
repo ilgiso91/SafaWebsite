@@ -1,4 +1,4 @@
-const safaProjects = [
+const projects = [
     {
         id: "safa",
         title: "Safa",
@@ -81,27 +81,8 @@ const safaProjects = [
     }
 ];
 
-const charmApps = [
-    {
-        id: "charm-ai",
-        title: "Charm AI",
-        tagline: "AI Flirt & Message Assistant",
-        description: "A separate AI messaging coach for dating chats: analyze conversations, generate replies, tune tone, read profile photos, and use the Charm keyboard when you ask.",
-        image: "images/charm-ai-reply.png",
-        features: ["Chat Analysis", "Smart Replies", "Tone Control", "Keyboard"],
-        tech: ["SwiftUI", "AI", "OCR", "iOS Keyboard"],
-        details: [
-            "Paste a chat or upload a screenshot to understand tone, interest, and intent.",
-            "Generate replies in different styles, from genuine to flirty and bold.",
-            "Use opener and profile coaching flows for dating app moments.",
-            "Ask the Charm keyboard for help inside other apps when you need it."
-        ]
-    }
-];
-
-const projectsData = Object.fromEntries([...safaProjects, ...charmApps].map((project) => [project.id, project]));
-const safaGrid = document.getElementById("safaGrid");
-const charmGrid = document.getElementById("charmGrid");
+const projectsData = Object.fromEntries(projects.map((project) => [project.id, project]));
+const grid = document.getElementById("projectsGrid");
 const modal = document.getElementById("projectModal");
 const modalBody = document.getElementById("modalBody");
 const closeBtn = document.querySelector(".modal-close");
@@ -148,11 +129,9 @@ function createProjectCard(project) {
     return card;
 }
 
-function renderSafaProjects() {
-    if (!safaGrid) return;
-
-    const featuredProjects = safaProjects.filter((project) => project.featured);
-    const otherProjects = safaProjects.filter((project) => !project.featured);
+function renderProjects() {
+    const featuredProjects = projects.filter((project) => project.featured);
+    const otherProjects = projects.filter((project) => !project.featured);
 
     const featuredSection = document.createElement("div");
     featuredSection.className = "featured-project";
@@ -167,19 +146,9 @@ function renderSafaProjects() {
     otherProjects.forEach((project) => scroller.appendChild(createProjectCard(project)));
     otherSection.appendChild(scroller);
 
-    safaGrid.appendChild(featuredSection);
-    safaGrid.appendChild(otherSection);
+    grid.appendChild(featuredSection);
+    grid.appendChild(otherSection);
     initAutoScroll(scroller);
-}
-
-function renderCharmApps() {
-    if (!charmGrid) return;
-
-    charmApps.forEach((project) => {
-        const card = createProjectCard(project);
-        card.classList.add("separate-app-card");
-        charmGrid.appendChild(card);
-    });
 }
 
 function initAutoScroll(scroller) {
@@ -298,6 +267,5 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-renderSafaProjects();
-renderCharmApps();
+renderProjects();
 setupReveal();
