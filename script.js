@@ -3,80 +3,112 @@ const projects = [
         id: "safa",
         title: "Safa",
         tagline: "Prayer Times, Quran & Muslim Guide",
-        description: "A calm, ad-free Islamic companion for accurate prayer times, Quran reading, Qibla direction, dhikr, Ramadan tools, Jumuah preparation, Yasin Sharif, and guided reflection.",
-        image: "images/home.png",
+        description: "A calm, ad-free Islamic companion for accurate prayer times, missed prayer tracking, Quran reading, Qibla direction, dhikr, and AI-guided reflection.",
+        image: "images/hero-home.webp",
         featured: true,
-        features: ["Prayer Times", "Quran Progress", "Qibla Compass", "Ad-free"],
-        tech: ["SwiftUI", "Location", "Quran", "Daily Worship"],
+        features: ["Prayer Times", "Qada Tracking", "Qibla Compass", "Ad-free"],
+        tech: ["Prayer", "Quran", "Qibla", "Daily Worship"],
         details: [
             "Accurate prayer times for Fajr, Dhuhr, Asr, Maghrib, and Isha.",
-            "Continue Quran reading with saved progress.",
-            "Find Qibla direction with clear angle guidance.",
-            "Use dhikr, Ramadan, Jumuah, and prayer guide tools in one place."
+            "Resume Quran reading with saved progress in one tap.",
+            "Ask Al Imam for thoughtful, guided Islamic prompts.",
+            "Qibla, dhikr, and missed prayer tools in one calm home screen."
         ]
     },
     {
-        id: "prayer",
-        title: "Prayer Times",
-        tagline: "Daily schedule at a glance",
-        description: "See the next prayer, daily timing cards, and location-aware calculation methods in a clean interface.",
-        image: "images/home.png",
+        id: "missed-prayers",
+        title: "Missed Prayers",
+        tagline: "Keep track of Qada",
+        description: "Organize outstanding Qada prayers and follow your progress with clarity, day by day and prayer by prayer.",
+        image: "images/missed-prayers.webp",
         featured: false,
-        features: ["Fajr", "Dhuhr", "Asr", "Isha"],
-        tech: ["Notifications", "Location"],
+        features: ["Qada Count", "Daily Marking", "Prayed/Missed/Exempt", "Outstanding by Prayer"],
+        tech: ["Tracking", "Prayer"],
         details: [
-            "Live next-prayer state.",
-            "Simple daily prayer overview.",
-            "Location-aware timing support.",
-            "Designed for fast checking throughout the day."
+            "See total outstanding Qada at a glance.",
+            "Mark each daily prayer as prayed, missed, or exempt.",
+            "Historical backlog combined with newly missed days.",
+            "Outstanding count broken down by individual prayer."
+        ]
+    },
+    {
+        id: "prayer-guide",
+        title: "Prayer Guide",
+        tagline: "Master the art of prayer",
+        description: "Follow visual, step-by-step guidance for every rak'ah, with posture detail and recitation for beginners and reminders alike.",
+        image: "images/prayer-guide.webp",
+        featured: false,
+        features: ["Step-by-Step", "Visual Posture", "Recitation", "Beginner Friendly"],
+        tech: ["Guide", "Reflection"],
+        details: [
+            "Clear visual steps for every rak'ah.",
+            "Detailed posture guidance for hands, back, and head.",
+            "Recitation text alongside each step.",
+            "Swipe or use buttons to move step by step."
         ]
     },
     {
         id: "quran",
-        title: "Quran Reading",
-        tagline: "Read and continue easily",
-        description: "Return to your last read surah, ayah, and page with a focused Quran reading experience.",
-        image: "images/quran.png",
+        title: "Quran",
+        tagline: "Read, listen, reflect",
+        description: "Experience the Quran with translations, verse-by-verse recitation, Mushaf pages, and a daily verse to reflect on.",
+        image: "images/quran.webp",
         featured: false,
-        features: ["Progress", "Surah", "Page", "Focus"],
-        tech: ["Reading", "Bookmarks"],
+        features: ["Translations", "Recitations", "Daily Verse", "Khatm Plan"],
+        tech: ["Reading", "Audio"],
         details: [
-            "Saved reading progress.",
-            "Clean Quran reading flow.",
-            "Quick resume from the home screen.",
-            "Built for calm, focused use."
+            "Switch between Mushaf pages and verse-by-verse reading.",
+            "Listen to every ayah with adjustable speed and repeat.",
+            "Set a Quran khatm date for an automatic daily juz plan.",
+            "A new verse of the day, selected for reflection."
         ]
     },
     {
-        id: "jumuah",
-        title: "Jumuah Prep",
-        tagline: "Friday preparation flow",
-        description: "Follow weekly Friday timing, preparation reminders, and nearby mosque context in one guided view.",
-        image: "images/jumuah.png",
+        id: "qibla",
+        title: "Qibla",
+        tagline: "Find the Qibla anywhere",
+        description: "Live compass guidance helps you face the Qibla wherever you are, with a precise angle and current location.",
+        image: "images/qibla.webp",
         featured: false,
-        features: ["Friday", "Mosques", "Timeline", "Prep"],
-        tech: ["Maps", "Location"],
+        features: ["Live Compass", "Qibla Angle", "Location Aware", "Works Anywhere"],
+        tech: ["Compass", "Location"],
         details: [
-            "Jumuah preparation timing.",
-            "Nearby mosque discovery.",
-            "Selected mosque state.",
-            "Weekly flow for Friday worship."
+            "Live location-based Qibla direction.",
+            "Precise Qibla angle for your current city.",
+            "Clear alignment confirmation when facing Qibla.",
+            "Simple, calm compass interface."
         ]
     },
     {
-        id: "tools",
-        title: "Muslim Tools",
-        tagline: "Qibla, Ramadan, dhikr and more",
-        description: "A full toolkit including Qibla compass, Ramadan guide, prayer guide, Yasin Sharif, Asma ul Husna, and halal meal ideas.",
-        image: "images/more.png",
+        id: "dhikr",
+        title: "Dhikr",
+        tagline: "Guided with purpose",
+        description: "Stay focused with guided remembrance, tactile counting, and a curated morning adhkar routine with progress tracking.",
+        image: "images/dhikr.webp",
         featured: false,
-        features: ["Qibla", "Dhikr", "Ramadan", "Yasin"],
-        tech: ["Guide", "Reflection"],
+        features: ["Guided Remembrance", "Tactile Counter", "Morning Adhkar", "Progress Tracking"],
+        tech: ["Dhikr", "Routine"],
         details: [
-            "Qibla compass with direction and angle.",
-            "Ramadan guide for suhoor and iftar rhythm.",
-            "Prayer guide from wudu to salam.",
-            "Yasin Sharif and Asma ul Husna sections."
+            "Arabic, transliteration, and translation views.",
+            "Source-anchored dhikr with a tactile bead counter.",
+            "Curated Morning Adhkar routine with a daily target.",
+            "Track completed dhikr and resume where you left off."
+        ]
+    },
+    {
+        id: "ai-imam",
+        title: "Ask Al Imam",
+        tagline: "Ask, learn, find guidance",
+        description: "Get thoughtful AI guidance for everyday Islamic questions, from beginner prayer basics to deeper understanding of Islam.",
+        image: "images/ai-imam.webp",
+        featured: false,
+        features: ["AI Guidance", "Starter Questions", "Calm Space", "Everyday Islam"],
+        tech: ["AI Guide", "Learning"],
+        details: [
+            "Ask questions in a calm, guided chat space.",
+            "Starter questions for beginners to Islam and prayer.",
+            "Thoughtful, respectful AI-guided answers.",
+            "Designed to encourage further learning and reflection."
         ]
     }
 ];
