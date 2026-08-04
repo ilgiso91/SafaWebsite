@@ -135,6 +135,22 @@ function createProjectCard(project) {
         .map((tech) => `<span class="tech-tag">${tech}</span>`)
         .join("");
 
+    const featuredHighlights = project.featured
+        ? `
+            <div class="featured-highlights">
+                <div class="rating-row">
+                    <span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                    <span>Designed for calm, everyday worship</span>
+                </div>
+                <div class="platform-row">
+                    <span class="platform-badge">App Store</span>
+                    <span class="platform-badge">iPhone</span>
+                    <span class="platform-badge">100% Ad-free</span>
+                </div>
+            </div>
+        `
+        : "";
+
     card.innerHTML = `
         <div class="project-image">
             <img src="${project.image}" alt="${project.title} screenshot">
@@ -146,6 +162,7 @@ function createProjectCard(project) {
             <p class="project-description">${project.description}</p>
             <div class="project-features">${featureItems}</div>
             <div class="project-tech">${techItems}</div>
+            ${featuredHighlights}
             <button class="btn btn-project" type="button">${project.featured ? "Learn More" : "View Details"}</button>
         </div>
     `;

@@ -473,7 +473,70 @@ img {
 }
 
 .project-card.featured .project-content {
+    position: relative;
+    justify-content: center;
     padding: 44px;
+    overflow: hidden;
+}
+
+.project-card.featured .project-content::after {
+    content: "";
+    position: absolute;
+    top: -36px;
+    right: -30px;
+    width: 220px;
+    height: 220px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cpath d='M128 36a70 70 0 1 0 0 128 86 86 0 1 1 0-128z' fill='none' stroke='%23b8862e' stroke-width='4'/%3E%3Cpath d='M150 74l7 16 17 2-13 12 4 17-15-9-15 9 4-17-13-12 17-2z' fill='none' stroke='%23b8862e' stroke-width='3'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: contain;
+    opacity: 0.16;
+    pointer-events: none;
+}
+
+.project-card.featured .project-tech {
+    margin-top: 10px;
+}
+
+.featured-highlights {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin: 24px 0 28px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(184, 134, 46, 0.28);
+}
+
+.rating-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text-secondary);
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.stars {
+    color: var(--gold-strong);
+    font-size: 17px;
+    letter-spacing: 2px;
+}
+
+.platform-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.platform-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 7px 14px;
+    border-radius: 999px;
+    background: rgba(29, 92, 73, 0.08);
+    border: 1px solid rgba(22, 52, 42, 0.14);
+    color: var(--green-dark);
+    font-size: 12px;
+    font-weight: 800;
 }
 
 .project-title {
@@ -523,12 +586,23 @@ img {
 }
 
 .feature-mark {
-    width: 10px;
-    height: 10px;
+    width: 22px;
+    height: 22px;
     flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     border-radius: 50%;
     background: var(--green-mid);
-    box-shadow: 0 0 0 5px rgba(29, 92, 73, 0.14);
+    box-shadow: 0 0 0 4px rgba(29, 92, 73, 0.12);
+}
+
+.feature-mark::before {
+    content: "\2713";
+    color: #fff;
+    font-size: 11px;
+    font-weight: 900;
+    line-height: 1;
 }
 
 .project-tech {
