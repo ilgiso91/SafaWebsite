@@ -10,4 +10,4 @@ The workflow at `.github/workflows/deploy.yml` publishes the site automatically 
 
 App Store link: https://apps.apple.com/app/id6775585908
 
-Support: ismailturanli91@gmail.com
+Support: TuranliApp@gmail.com
