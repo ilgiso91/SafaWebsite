@@ -975,3 +975,25 @@ img {
         transition-duration: 0.01ms !important;
     }
 }
+
+/* Feature chips in the 315px cards: two columns leave about 85px per label, so the text
+   is a little smaller there and may wrap, but never runs past the chip. */
+.feature,
+.feature > span:last-child {
+    min-width: 0;
+}
+
+.project-card:not(.featured) .project-features {
+    gap: 8px;
+}
+
+.project-card:not(.featured) .feature {
+    gap: 8px;
+    padding: 10px 8px;
+    font-size: 13px;
+}
+
+.project-card:not(.featured) .feature-mark {
+    width: 20px;
+    height: 20px;
+}

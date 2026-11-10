@@ -22,7 +22,7 @@ const projects = [
         description: "Organize outstanding Qada prayers and follow your progress with clarity, day by day and prayer by prayer.",
         image: "images/missed-prayers.webp",
         featured: false,
-        features: ["Qada Count", "Daily Marking", "Prayed/Missed/Exempt", "Outstanding by Prayer"],
+        features: ["Qada Count", "Daily Marking", "Prayed / Missed / Exempt", "Outstanding by Prayer"],
         tech: ["Tracking", "Prayer"],
         details: [
             "See total outstanding Qada at a glance.",
@@ -86,7 +86,7 @@ const projects = [
         description: "Stay focused with guided remembrance, tactile counting, and a curated morning adhkar routine with progress tracking.",
         image: "images/dhikr.webp",
         featured: false,
-        features: ["Guided Remembrance", "Tactile Counter", "Morning Adhkar", "Progress Tracking"],
+        features: ["Guided Dhikr", "Tactile Counter", "Morning Adhkar", "Progress Tracking"],
         tech: ["Dhikr", "Routine"],
         details: [
             "Arabic, transliteration, and translation views.",
