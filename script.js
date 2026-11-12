@@ -144,7 +144,9 @@ function createProjectCard(project) {
                 </div>
                 <div class="platform-row">
                     <span class="platform-badge">App Store</span>
+                    <span class="platform-badge">Google Play</span>
                     <span class="platform-badge">iPhone</span>
+                    <span class="platform-badge">Android</span>
                     <span class="platform-badge">100% Ad-free</span>
                 </div>
             </div>
